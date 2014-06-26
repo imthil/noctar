@@ -4,7 +4,7 @@
 # Title: NBFM Receiver
 # Author: Thilina Mallawa Arachchi
 # Description: A simple narrow-band FM receiver using the noctar SDR
-# Generated: Thu Jun 26 08:34:35 2014
+# Generated: Thu Jun 26 08:41:33 2014
 ##################################################
 
 from gnuradio import analog
@@ -67,7 +67,7 @@ class nbfm_rx(grc_wxgui.top_block_gui):
         self.blocks_interleaved_short_to_complex_0 = blocks.interleaved_short_to_complex(False, False)
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_short*1, "/dev/langford", True)
         self.audio_sink_0 = audio.sink(48000, "", True)
-        self.analog_pwr_squelch_xx_1 = analog.pwr_squelch_cc(50, 1, 0, False)
+        self.analog_pwr_squelch_xx_1 = analog.pwr_squelch_cc(-80, 1, 0, False)
         self.analog_nbfm_rx_0 = analog.nbfm_rx(
         	audio_rate=30000,
         	quad_rate=300000,
